@@ -1,10 +1,10 @@
 # -*- coding utf-8 -*-
 
-winner_number = 24
+winner_number = "24"
 
-chosen_number = input("Adivina que numero estoy pensando del 1 al 24\n")
+chosen_number = input("Hola Invitado, adivina que numero estoy pensando [Del 1 al 24]: ")
 
 if winner_number == chosen_number:
-    print("Haz adivinado")
+    print("Haz adivinado, el número ganador es: " + winner_number)
 else :
-    print("No haz tenido suerte")
+    print("No haz tenido suerte, el número ganador era: " + winner_number + ", pero elegiste el: " + chosen_number)
