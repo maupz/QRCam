@@ -15,3 +15,15 @@ Este proyecto es un lector de códigos QR en tiempo real utilizando la cámara d
 
 ```bash
 pip install -r requirements.txt
+```
+
+## Uso
+1. Ejecuta el script qrCamera.py para iniciar el lector de códigos QR:
+
+```bash
+python ./QRCamera/qrCamera.py
+```
+2. Asegúrate de que tu cámara esté funcionando y bien enfocada.
+3. Apunta la cámara hacia un código QR y espera a que se detecte y decodifique. La información del código QR se mostrará en la consola y se guardará en el archivo nombres.txt junto con la fecha y hora actuales.
+4. En la ventana de visualización de la cámara, se dibujará un contorno alrededor del código QR detectado y se mostrará un texto indicando que se ha leído correctamente.
+5. Presiona la tecla 'q' para salir del programa.
