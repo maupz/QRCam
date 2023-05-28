@@ -1,0 +1,3 @@
+#Herramientas útiles para el proyecto
+-https://www.qr-code-generator.com/
+-VS Code, Python 3, zbar libraries
