@@ -1,6 +1,8 @@
 import cv2
 from pyzbar.pyzbar import decode
 from datetime import datetime
+import numpy as np
+
 
 def leer_codigo_qr():
     # Capturar video desde la cámara
@@ -28,7 +30,18 @@ def leer_codigo_qr():
             guardar_nombre(datos)
 
             # Esperar un segundo para evitar la lectura repetida del mismo código
-            cv2.waitKey(5000)
+            cv2.waitKey(2000)
+
+            # Dibujar un contorno alrededor del código QR
+            puntos = codigo.polygon
+            if puntos:
+                # Convertir los puntos a un arreglo numpy
+                puntos = np.array(puntos, dtype=np.int32)
+                # Dibujar el contorno
+                cv2.polylines(fotograma, [puntos], True, (0, 255, 0), 2)
+
+            # Mostrar un texto indicando que se ha leído correctamente el código QR
+            cv2.putText(fotograma, "Código QR leído", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
 
         # Mostrar el fotograma actual en una ventana
         cv2.imshow("Lector de códigos QR", fotograma)
