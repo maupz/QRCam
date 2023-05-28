@@ -41,13 +41,13 @@ def leer_codigo_qr():
                 cv2.polylines(fotograma, [puntos], True, (0, 255, 0), 2)
 
             # Mostrar un texto indicando que se ha leído correctamente el código QR
-            cv2.putText(fotograma, "Código QR leído", (20, 40), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
+            cv2.putText(fotograma, "CODIGO QR LEIDO", (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 0), 2)
 
         # Mostrar el fotograma actual en una ventana
         cv2.imshow("Lector de códigos QR", fotograma)
 
         # Romper el bucle si se presiona la tecla 'q'
-        if cv2.waitKey(2000) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     # Liberar los recursos
